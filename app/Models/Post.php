@@ -13,6 +13,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Post extends Model
 {
     use HasFactory;
+
+    //Pour les champs qu'on souhaite proteger du massasigment
+    protected $guarded = ['id', 'created_at', 'updated_at'];
     
     /* On fais en sorte ici que pour chaque poste recuperer: 
        on recupere les differents categories qui lu sont associes et tous les tags qui lui sont associes  
